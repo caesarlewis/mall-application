@@ -16,6 +16,7 @@
     </description>
     <modules>
         <module>goods-service</module>
+        <module>file-service</module>
     </modules>
 
     <dependencies>

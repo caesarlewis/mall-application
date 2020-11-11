@@ -12,8 +12,19 @@ import java.util.List;
  */
 public interface BrandService extends IService<Brand> {
 
+    /****
+     * 条件查询
+     * return List<Brand>
+     */
     List<Brand> queryList(Brand brand);
-
+    /****
+     * 条件分页查询
+     * return Page<Brand>
+     */
     Page<Brand> queryPageList(Long currentPage,Long size,Brand brand );
 
+    /***
+     * 根据分类ID查询品牌集合
+     */
+    List<Brand> queryByCategoryId(Integer id);
 }

@@ -56,5 +56,14 @@ public class BrandController {
         return ResponseResult.ok(brandPage);
     }
 
+    /****
+     * 根据分类ID查询品牌集合
+     */
+    @GetMapping(value = "/category/{pid}")
+    public ResponseResult  categoryBrands(@PathVariable(value = "pid")Integer pid){
+        List<Brand> brands = brandService.queryByCategoryId(pid);
+        return ResponseResult.ok(brands);
+    }
+
 
 }

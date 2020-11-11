@@ -1,0 +1,26 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: mall-goods
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.100.130:3306/shop_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+mybatis-plus:
+  #复杂的操作可能需要自己写SQL,SQL可以写到xml文件中，这里指定和Dao对应的xml文件，此时我们需要在resources中创建一个mapper目录
+  mapper-location: mapper/*.xml
+  #指定JavaBean的别名包，和MyBatis用法一致
+  type-aliases-package: com.jasonless.mall.**.model
+  configuration:
+    #开启驼峰功能，数据库表列名如果有_，可以自动按驼峰命名转换规则转换
+    map-underscore-to-camel-case: true
+    #开启日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#日志配置
+logging:
+  pattern:
+    console: "%msg%n"

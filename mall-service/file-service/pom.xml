@@ -22,11 +22,13 @@
             <version>0.6.0</version>
         </dependency>
         <!-- Cephfs 文件系统依赖 -->
+        <!-- https://mvnrepository.com/artifact/com.ceph/libcephfs -->
         <dependency>
             <groupId>com.ceph</groupId>
             <artifactId>libcephfs</artifactId>
             <version>0.80.5</version>
         </dependency>
+
 
         <!--swift-->
         <dependency>

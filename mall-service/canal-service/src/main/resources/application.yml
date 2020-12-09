@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: mall-canal
+
+#Canal配置
+canal:
+  server: 192.168.100.130:11111
+  destination: example
+#日志配置
+logging:
+  pattern:
+    console: "%msg%n"
+  level:
+    root: error

@@ -3,37 +3,38 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>mall-application</artifactId>
+        <artifactId>mall-service</artifactId>
         <groupId>com.jasonless.mall</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mall-service</artifactId>
-    <packaging>pom</packaging>
-    <description>
-        所有微服务应用接口
-    </description>
-    <modules>
-        <module>goods-service</module>
-        <module>file-service</module>
-        <module>canal-service</module>
-        <module>search-service</module>
-    </modules>
+    <artifactId>canal-service</artifactId>
+
+    <description></description>
 
     <dependencies>
+        <!--springboot-canal快速构建依赖包-->
         <dependency>
-            <groupId>com.jasonless.mall</groupId>
-            <artifactId>mall-service-dependency</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>top.javatool</groupId>
+            <artifactId>canal-spring-boot-starter</artifactId>
+            <version>1.2.1-RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>com.jasonless.mall</groupId>
-            <artifactId>mall-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
+        <!--依赖goods-api-->
+        <dependency>
+            <groupId>com.jasonless.mall</groupId>
+            <artifactId>goods-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jasonless.mall</groupId>
+            <artifactId>search-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
 
 
 </project>

@@ -1,0 +1,13 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: mall-search-web
+  thymeleaf:
+    cache: false
+    suffix: .html
+    prefix: classpath:/templates/
+
+logging:
+  pattern:
+    console: "%msg%n"

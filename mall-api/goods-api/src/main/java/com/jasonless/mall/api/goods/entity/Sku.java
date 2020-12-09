@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -18,6 +20,7 @@ import java.util.Date;
 @NoArgsConstructor
 //MyBatisPlus表映射注解
 @TableName(value = "sku")
+@Table
 public class Sku {
 
     @TableId(type = IdType.ASSIGN_ID)
@@ -27,13 +30,21 @@ public class Sku {
     private Integer num;
     private String image;
     private String images;
+    @Column(name = "create_time")
     private Date createTime;
+    @Column(name = "update_time")
     private Date updateTime;
+    @Column(name = "spu_id")
     private String spuId;
+    @Column(name = "category_id")
     private Integer categoryId;
+    @Column(name = "category_name")
     private String categoryName;
+    @Column(name = "brand_id")
     private Integer brandId;
+    @Column(name = "brand_name")
     private String brandName;
+    @Column(name = "sku_attribute")
     private String skuAttribute;
     private Integer status;
 

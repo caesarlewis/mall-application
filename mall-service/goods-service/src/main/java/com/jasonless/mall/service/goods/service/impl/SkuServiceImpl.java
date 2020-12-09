@@ -8,6 +8,11 @@ import com.jasonless.mall.service.goods.mapper.AdItemsMapper;
 import com.jasonless.mall.service.goods.mapper.SkuMapper;
 import com.jasonless.mall.service.goods.service.SkuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +21,8 @@ import java.util.stream.Collectors;
  * @author Jasonless
  * @date 2020/12/3
  */
+@Service
+@CacheConfig(cacheNames = "ad-items-skus")
 public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuService {
 
     @Autowired
@@ -24,6 +31,13 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuSe
     @Autowired
     private AdItemsMapper adItemsMapper;
 
+    /***
+     * 根据推广产品分类ID查询指定分类下的产品列表
+     * @param id
+     * @return
+     * ad-items-skus::1
+     */
+    @Cacheable(key ="#id" )
     @Override
     public List<Sku> typeSkuItems(Integer id) {
         //查询所有分类下的推广
@@ -38,13 +52,33 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuSe
         return skus;
     }
 
+    /***
+     * 根据分类id删除指定推广数据
+     * @param id
+     * @return
+     */
+    @CacheEvict(key ="#id" )
     @Override
     public void delTypeSkuItems(Integer id) {
-
+        skuMapper.deleteById(id);
     }
 
+    /****
+     * 修改缓存
+     * @param id
+     * @return
+     */
+    @CachePut(key = "#id")
     @Override
     public List<Sku> updateTypeSkuItems(Integer id) {
-        return null;
+
+        //1.查询当前分类下的所有列表信息
+        QueryWrapper<AdItems> adItemsQueryWrapper = new QueryWrapper<AdItems>();
+        adItemsQueryWrapper.eq("type",id);
+        List<AdItems> adItems = adItemsMapper.selectList(adItemsQueryWrapper);
+
+        //2.根据推广列表查询产品列表信息
+        List<String> skuids = adItems.stream().map(adItem->adItem.getSkuId()).collect(Collectors.toList());
+        return skuids==null || skuids.size()<=0? null : skuMapper.selectBatchIds(skuids);
     }
 }

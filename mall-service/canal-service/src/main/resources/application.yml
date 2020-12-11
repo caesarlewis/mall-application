@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: mall-canal
+  main:
+    allow-bean-definition-overriding: true
 
 #Canal配置
 canal:

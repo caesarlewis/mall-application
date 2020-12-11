@@ -3,10 +3,9 @@ package com.jasonless.mall.api.search.feign;
 import com.jasonless.mall.api.search.model.SkuEs;
 import com.jasonless.mall.common.util.ResponseResult;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * @author Jasonless
@@ -26,5 +25,11 @@ public interface SkuSearchFeign {
      */
     @DeleteMapping(value = "/search/del/{id}")
     ResponseResult del(@PathVariable(value = "id")String id);
+
+    /****
+     * 商品搜索
+     */
+    @GetMapping
+    ResponseResult<Map<String,Object>> search(@RequestParam Map<String,Object> searchMap);
 
 }

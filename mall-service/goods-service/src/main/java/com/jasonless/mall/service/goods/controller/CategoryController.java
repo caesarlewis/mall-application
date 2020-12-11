@@ -28,4 +28,13 @@ public class CategoryController {
         return ResponseResult.ok(categoryService.findByParentId(id));
     }
 
+    /****
+     * 根据ID查询
+     */
+    @GetMapping(value = "/{id}")
+    public ResponseResult<Category> one(@PathVariable(value = "id")Integer id){
+        Category category = categoryService.getById(id);
+        return ResponseResult.ok(category);
+    }
+
 }

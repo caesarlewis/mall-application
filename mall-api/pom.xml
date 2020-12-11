@@ -16,6 +16,7 @@
     <modules>
         <module>goods-api</module>
         <module>search-api</module>
+        <module>page-api</module>
     </modules>
 
     <dependencies>

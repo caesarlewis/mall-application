@@ -2,6 +2,7 @@ package com.jasonless.mall.service.search.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.jasonless.mall.api.search.model.SkuEs;
+import com.jasonless.mall.common.util.PageInfo;
 import com.jasonless.mall.service.search.mapper.SkuSearchMapper;
 import com.jasonless.mall.service.search.service.SkuSearchService;
 import com.jasonless.mall.service.search.util.HighlightResultMapper;
@@ -75,6 +76,12 @@ public class SkuSearchServiceImpl implements SkuSearchService {
         List<SkuEs> list = page.getContent();
         resultMap.put("list",list);
         resultMap.put("totalElements",page.getTotalElements());
+
+        //分页创建
+        int currentPage = queryBuilder.build().getPageable().getPageNumber()+1;
+        PageInfo pageInfo = new PageInfo(page.getTotalElements(),currentPage,5);
+        resultMap.put("pageInfo",pageInfo);
+
         return resultMap;
     }
 

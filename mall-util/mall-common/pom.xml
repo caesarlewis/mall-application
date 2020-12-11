@@ -14,6 +14,12 @@
     <description>
         工具工程
     </description>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>

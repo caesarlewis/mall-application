@@ -1,5 +1,6 @@
 package com.jasonless.mall.api.goods.feign;
 
+import com.jasonless.mall.api.goods.entity.Category;
 import com.jasonless.mall.api.goods.entity.Sku;
 import com.jasonless.mall.common.util.ResponseResult;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -32,4 +33,9 @@ public interface SkuFeign {
     @PutMapping(value = "/sku/aditems/type/{id}")
     public ResponseResult updateTypeItems(@PathVariable(value = "id")Integer id);
 
+    /****
+     * 根据ID查询
+     */
+    @GetMapping(value = "/category/{id}")
+    ResponseResult<Category> one(@PathVariable(value = "id")Integer id);
 }

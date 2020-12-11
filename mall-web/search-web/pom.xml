@@ -11,5 +11,13 @@
 
     <artifactId>search-web</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.jasonless.mall</groupId>
+            <artifactId>search-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

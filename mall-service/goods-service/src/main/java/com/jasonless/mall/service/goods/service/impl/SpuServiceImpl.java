@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -86,5 +87,23 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, Spu> implements SpuSe
         }
 
 
+    }
+
+    /***
+     * 查询商品详情
+     * @param id
+     * @return
+     */
+    @Override
+    public Product findBySpuId(String id) {
+        //查询Spu
+        Spu spu = spuMapper.selectById(id);
+
+        //查询Sku集合
+        List<Sku> skus = skuMapper.selectList(new QueryWrapper<Sku>().eq("spu_id",id));
+        Product product = new Product();
+        product.setSpu(spu);
+        product.setSkus(skus);
+        return product;
     }
 }

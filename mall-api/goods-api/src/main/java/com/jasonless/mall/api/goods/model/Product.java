@@ -1,4 +1,4 @@
-package com.jasonless.mall.api.goods.entity;
+package com.jasonless.mall.api.goods.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

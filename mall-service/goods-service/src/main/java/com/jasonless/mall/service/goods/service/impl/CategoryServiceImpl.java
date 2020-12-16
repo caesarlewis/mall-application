@@ -2,7 +2,7 @@ package com.jasonless.mall.service.goods.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jasonless.mall.api.goods.entity.Category;
+import com.jasonless.mall.api.goods.model.Category;
 import com.jasonless.mall.service.goods.mapper.CategoryMapper;
 import com.jasonless.mall.service.goods.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

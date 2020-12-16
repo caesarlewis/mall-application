@@ -6,3 +6,6 @@ spring:
         server-addr: localhost
       discovery:
         server-addr: localhost
+    alibaba:
+      seta:
+        tx-service-group: tx_shop

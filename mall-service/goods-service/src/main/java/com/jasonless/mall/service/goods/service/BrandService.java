@@ -2,7 +2,7 @@ package com.jasonless.mall.service.goods.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jasonless.mall.api.goods.entity.Brand;
+import com.jasonless.mall.api.goods.model.Brand;
 
 import java.util.List;
 

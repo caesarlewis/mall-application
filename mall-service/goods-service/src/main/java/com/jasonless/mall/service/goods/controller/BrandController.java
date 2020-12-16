@@ -1,7 +1,7 @@
 package com.jasonless.mall.service.goods.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.jasonless.mall.api.goods.entity.Brand;
+import com.jasonless.mall.api.goods.model.Brand;
 import com.jasonless.mall.common.util.ResponseResult;
 import com.jasonless.mall.service.goods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;

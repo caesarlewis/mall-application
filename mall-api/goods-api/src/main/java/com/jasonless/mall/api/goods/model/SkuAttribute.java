@@ -1,29 +1,34 @@
-package com.jasonless.mall.api.goods.entity;
+package com.jasonless.mall.api.goods.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
- * 推广商品
  * @author Jasonless
- * @date 2020/12/3
+ * @date 2020/11/11
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 //MyBatisPlus表映射注解
-@TableName(value = "ad_items")
-public class AdItems {
+@TableName(value = "sku_attribute")
+public class SkuAttribute {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
     private String name;
-    private Integer type;
-    private String skuId;
+    private String options;
     private Integer sort;
+
+    //对应分类
+    @TableField(exist = false)
+    private List<Category> categories;
 
 }

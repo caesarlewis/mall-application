@@ -1,7 +1,7 @@
 package com.jasonless.mall.service.goods.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jasonless.mall.api.goods.entity.Brand;
+import com.jasonless.mall.api.goods.model.Brand;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,7 @@
 package com.jasonless.mall.service.cart.service.impl;
 
 import com.jasonless.mall.api.cart.model.Cart;
-import com.jasonless.mall.api.goods.entity.Sku;
+import com.jasonless.mall.api.goods.model.Sku;
 import com.jasonless.mall.api.goods.feign.SkuFeign;
 import com.jasonless.mall.common.util.ResponseResult;
 import com.jasonless.mall.service.cart.mapper.CartMapper;

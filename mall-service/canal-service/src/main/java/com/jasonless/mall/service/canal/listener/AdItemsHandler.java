@@ -1,6 +1,6 @@
 package com.jasonless.mall.service.canal.listener;
 
-import com.jasonless.mall.api.goods.entity.AdItems;
+import com.jasonless.mall.api.goods.model.AdItems;
 import com.jasonless.mall.api.goods.feign.SkuFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

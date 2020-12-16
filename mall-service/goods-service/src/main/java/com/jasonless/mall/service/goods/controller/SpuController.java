@@ -1,6 +1,6 @@
 package com.jasonless.mall.service.goods.controller;
 
-import com.jasonless.mall.api.goods.entity.Product;
+import com.jasonless.mall.api.goods.model.Product;
 import com.jasonless.mall.common.util.ResponseResult;
 import com.jasonless.mall.service.goods.service.SpuService;
 import org.springframework.beans.factory.annotation.Autowired;

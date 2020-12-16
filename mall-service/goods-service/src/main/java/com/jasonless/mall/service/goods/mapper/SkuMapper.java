@@ -1,7 +1,7 @@
 package com.jasonless.mall.service.goods.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jasonless.mall.api.goods.entity.Sku;
+import com.jasonless.mall.api.goods.model.Sku;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;

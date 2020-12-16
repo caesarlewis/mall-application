@@ -3,7 +3,7 @@ package com.jasonless.mall.service.goods.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jasonless.mall.api.goods.entity.*;
+import com.jasonless.mall.api.goods.model.*;
 import com.jasonless.mall.service.goods.mapper.BrandMapper;
 import com.jasonless.mall.service.goods.mapper.CategoryMapper;
 import com.jasonless.mall.service.goods.mapper.SkuMapper;

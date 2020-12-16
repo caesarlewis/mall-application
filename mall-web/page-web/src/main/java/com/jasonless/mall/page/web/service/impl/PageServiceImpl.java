@@ -1,9 +1,9 @@
 package com.jasonless.mall.page.web.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.jasonless.mall.api.goods.entity.Category;
-import com.jasonless.mall.api.goods.entity.Product;
-import com.jasonless.mall.api.goods.entity.Sku;
+import com.jasonless.mall.api.goods.model.Category;
+import com.jasonless.mall.api.goods.model.Product;
+import com.jasonless.mall.api.goods.model.Sku;
 import com.jasonless.mall.api.goods.feign.CategoryFeign;
 import com.jasonless.mall.api.goods.feign.SpuFeign;
 import com.jasonless.mall.common.util.ResponseResult;

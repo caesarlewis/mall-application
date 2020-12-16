@@ -1,7 +1,7 @@
 package com.jasonless.mall.service.goods.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jasonless.mall.api.goods.entity.SkuAttribute;
+import com.jasonless.mall.api.goods.model.SkuAttribute;
 import com.jasonless.mall.service.goods.mapper.SkuAttributeMapper;
 import com.jasonless.mall.service.goods.service.SkuAttributeService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.jasonless.mall.service.goods.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jasonless.mall.api.goods.entity.SkuAttribute;
+import com.jasonless.mall.api.goods.model.SkuAttribute;
 
 import java.util.List;
 

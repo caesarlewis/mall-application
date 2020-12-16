@@ -12,6 +12,7 @@ import com.jasonless.mall.order.api.model.OrderSku;
 import com.jasonless.mall.service.order.mapper.OrderMapper;
 import com.jasonless.mall.service.order.mapper.OrderSkuMapper;
 import com.jasonless.mall.service.order.service.OrderService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.keyvalue.core.IterableConverter;
 import org.springframework.stereotype.Service;
@@ -44,6 +45,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
      *      1)价格如何校验？
      */
     @Override
+    @GlobalTransactional
     public Boolean add(Order order) {
         //1.查询购物车记录
         ResponseResult<List<Cart>> cartResp = cartFeign.list(order.getCartIds());

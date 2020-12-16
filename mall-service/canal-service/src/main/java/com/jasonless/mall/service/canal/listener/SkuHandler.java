@@ -1,7 +1,7 @@
 package com.jasonless.mall.service.canal.listener;
 
 import com.alibaba.fastjson.JSON;
-import com.jasonless.mall.api.goods.entity.Sku;
+import com.jasonless.mall.api.goods.model.Sku;
 import com.jasonless.mall.api.page.feign.PageFeign;
 import com.jasonless.mall.api.search.feign.SkuSearchFeign;
 import com.jasonless.mall.api.search.model.SkuEs;

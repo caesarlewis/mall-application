@@ -1,4 +1,4 @@
-package com.jasonless.mall.api.goods.entity;
+package com.jasonless.mall.api.goods.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

@@ -1,6 +1,6 @@
 package com.jasonless.mall.api.goods.feign;
 
-import com.jasonless.mall.api.goods.entity.Category;
+import com.jasonless.mall.api.goods.model.Category;
 import com.jasonless.mall.common.util.ResponseResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

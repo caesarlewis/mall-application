@@ -1,6 +1,6 @@
 package com.jasonless.mall.service.goods.controller;
 
-import com.jasonless.mall.api.goods.entity.SkuAttribute;
+import com.jasonless.mall.api.goods.model.SkuAttribute;
 import com.jasonless.mall.common.util.ResponseResult;
 import com.jasonless.mall.service.goods.service.SkuAttributeService;
 import org.springframework.beans.factory.annotation.Autowired;

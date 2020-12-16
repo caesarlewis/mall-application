@@ -1,33 +1,29 @@
-package com.jasonless.mall.api.goods.entity;
+package com.jasonless.mall.api.goods.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.*;
-
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * 品牌实体类
+ * 推广商品
  * @author Jasonless
- * @date 2020/10/26
+ * @date 2020/12/3
  */
-@TableName(value = "brand")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Brand implements Serializable {
+//MyBatisPlus表映射注解
+@TableName(value = "ad_items")
+public class AdItems {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
-
     private String name;
-
-    private String image;
-
-    private String initial;
-
+    private Integer type;
+    private String skuId;
     private Integer sort;
-
 
 }

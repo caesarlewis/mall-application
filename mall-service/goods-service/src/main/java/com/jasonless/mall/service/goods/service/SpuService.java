@@ -1,8 +1,8 @@
 package com.jasonless.mall.service.goods.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jasonless.mall.api.goods.entity.Product;
-import com.jasonless.mall.api.goods.entity.Spu;
+import com.jasonless.mall.api.goods.model.Product;
+import com.jasonless.mall.api.goods.model.Spu;
 
 /**
  * @author Jasonless

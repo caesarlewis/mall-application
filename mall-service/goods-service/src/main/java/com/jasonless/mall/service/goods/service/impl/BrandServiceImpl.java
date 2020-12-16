@@ -3,11 +3,10 @@ package com.jasonless.mall.service.goods.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jasonless.mall.api.goods.entity.Brand;
+import com.jasonless.mall.api.goods.model.Brand;
 import com.jasonless.mall.service.goods.mapper.BrandMapper;
 import com.jasonless.mall.service.goods.service.BrandService;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

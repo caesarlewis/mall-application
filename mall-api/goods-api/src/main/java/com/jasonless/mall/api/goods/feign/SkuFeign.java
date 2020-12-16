@@ -1,8 +1,8 @@
 package com.jasonless.mall.api.goods.feign;
 
 import com.jasonless.mall.api.cart.model.Cart;
-import com.jasonless.mall.api.goods.entity.Category;
-import com.jasonless.mall.api.goods.entity.Sku;
+import com.jasonless.mall.api.goods.model.Category;
+import com.jasonless.mall.api.goods.model.Sku;
 import com.jasonless.mall.common.util.ResponseResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;

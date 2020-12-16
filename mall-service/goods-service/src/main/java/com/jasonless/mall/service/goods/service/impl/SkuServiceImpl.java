@@ -2,6 +2,7 @@ package com.jasonless.mall.service.goods.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.jasonless.mall.api.cart.model.Cart;
 import com.jasonless.mall.api.goods.entity.AdItems;
 import com.jasonless.mall.api.goods.entity.Sku;
 import com.jasonless.mall.service.goods.mapper.AdItemsMapper;
@@ -80,5 +81,20 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuSe
         //2.根据推广列表查询产品列表信息
         List<String> skuids = adItems.stream().map(adItem->adItem.getSkuId()).collect(Collectors.toList());
         return skuids==null || skuids.size()<=0? null : skuMapper.selectBatchIds(skuids);
+    }
+
+    /***
+     * 库存递减
+     * @param carts
+     */
+    @Override
+    public void decount(List<Cart> carts) {
+        for (Cart cart : carts) {
+            //语句级控制，防止超卖
+            int count = skuMapper.decount(cart.getSkuId(),cart.getNum());
+            if(count<=0){
+                throw new RuntimeException("库存不足！");
+            }
+        }
     }
 }

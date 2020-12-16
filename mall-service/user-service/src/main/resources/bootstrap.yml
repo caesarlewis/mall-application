@@ -1,0 +1,9 @@
+spring:
+  application:
+    cloud:
+      nacos:
+        config:
+          file-extension: yaml
+          server-addr: 192.168.100.130:8848
+        discovery:
+          server-addr: 192.168.100.130:8848

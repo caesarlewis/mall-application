@@ -1,5 +1,6 @@
 package com.jasonless.mall.api.goods.feign;
 
+import com.jasonless.mall.api.cart.model.Cart;
 import com.jasonless.mall.api.goods.entity.Category;
 import com.jasonless.mall.api.goods.entity.Sku;
 import com.jasonless.mall.common.util.ResponseResult;
@@ -38,4 +39,18 @@ public interface SkuFeign {
      */
     @GetMapping(value = "/category/{id}")
     ResponseResult<Category> one(@PathVariable(value = "id")Integer id);
+
+    /****
+     * 根据ID获取Sku
+     */
+    @GetMapping(value = "/sku/{id}")
+    ResponseResult<Sku> one(@PathVariable(value = "id") String id);
+
+    /***
+     * 库存递减
+     * @param carts
+     * @return
+     */
+    @PostMapping(value = "/dcount")
+    ResponseResult decount(@RequestBody List<Cart> carts);
 }

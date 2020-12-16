@@ -19,6 +19,9 @@
         <module>file-service</module>
         <module>canal-service</module>
         <module>search-service</module>
+        <module>cart-service</module>
+        <module>user-service</module>
+        <module>order-service</module>
     </modules>
 
     <dependencies>

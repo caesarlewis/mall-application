@@ -7,5 +7,5 @@ spring:
       discovery:
         server-addr: localhost
     alibaba:
-      seta:
+      seata:
         tx-service-group: tx_shop

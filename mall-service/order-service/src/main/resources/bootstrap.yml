@@ -8,5 +8,5 @@ spring:
         #Nacos的注册地址
         server-addr: 192.168.100.130:8848
     alibaba:
-      seta:
+      seata:
         tx-service-group: tx_shop

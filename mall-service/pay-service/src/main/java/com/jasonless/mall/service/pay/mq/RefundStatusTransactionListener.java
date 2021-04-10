@@ -1,8 +1,14 @@
 package com.jasonless.mall.service.pay.mq;
 
-import com.alibaba.fastjson.JSON;
-import com.jasonless.mall.api.pay.model.PayLog;
-import com.jasonless.mall.service.pay.service.PayLogService;
+/**
+ * @author LiuShiZeng
+ * 2021/4/10
+ * 写注释吧
+ */
+
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+import com.jasonless.mall.api.pay.model.RefundLog;
+import com.jasonless.mall.service.pay.dao.RefundLogMapper;
 import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionState;
@@ -10,16 +16,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
 
-/**
- * @author Jasonless
- * @date 2020/12/16
- */
+import java.util.Date;
+import java.util.Map;
+
 @Component
-@RocketMQTransactionListener(txProducerGroup = "rocket")
-public class TransactionListenerImpl implements RocketMQLocalTransactionListener {
+@RocketMQTransactionListener(txProducerGroup = "refundstatustx")
+public class RefundStatusTransactionListener implements RocketMQLocalTransactionListener {
 
     @Autowired
-    private PayLogService payLogService;
+    private RefundLogMapper refundLogMapper;
 
     /***
      * 发送prepare消息成功后回调该方法用于执行本地事务
@@ -31,17 +36,24 @@ public class TransactionListenerImpl implements RocketMQLocalTransactionListener
     public RocketMQLocalTransactionState executeLocalTransaction(Message message, Object o) {
         try {
             //================本地事务操作开始=====================================
-            //将o转成PayLog
-            String result = new String((byte[]) message.getPayload(),"UTF-8");
-            PayLog payLog = JSON.parseObject(result,PayLog.class);
-            payLogService.log(payLog);
+            //将o转成Map
+            Map<String,String> resultMap = (Map<String, String>) o;
+            //添加退款日志记录
+            RefundLog refundLog = new RefundLog(
+                    IdWorker.getIdStr(),
+                    resultMap.get("out_trade_no"),  //原订单号
+                    resultMap.get("out_trade_no"),  //退款订单号（order_refund的id）
+                    Integer.valueOf(resultMap.get("refund_fee")),   //退款金额
+                    new Date()
+            );
+            int count = refundLogMapper.insert(refundLog);
             //================本地事务操作结束=====================================
         } catch (Exception e) {
             //异常,消息回滚
             e.printStackTrace();
             return RocketMQLocalTransactionState.ROLLBACK;
         }
-        return RocketMQLocalTransactionState.COMMIT;
+        return RocketMQLocalTransactionState.UNKNOWN;
     }
 
     /***
@@ -53,4 +65,5 @@ public class TransactionListenerImpl implements RocketMQLocalTransactionListener
     public RocketMQLocalTransactionState checkLocalTransaction(Message message) {
         return RocketMQLocalTransactionState.COMMIT;
     }
+
 }

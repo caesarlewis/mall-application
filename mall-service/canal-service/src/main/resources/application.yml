@@ -7,6 +7,14 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+elaticjob:
+  zookeeper:
+    server-lists: 192.168.100.130:2181
+    namespace: synctask
+
+dynamiczk: 192.168.100.130:2181
+dynamicnamespace: dynamictask
+
 #Canal配置
 canal:
   server: 192.168.100.130:11111

@@ -23,6 +23,7 @@
         <module>user-service</module>
         <module>order-service</module>
         <module>pay-service</module>
+        <module>seckill-service</module>
     </modules>
 
     <dependencies>

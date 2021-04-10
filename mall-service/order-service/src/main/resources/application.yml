@@ -18,6 +18,25 @@ feign:
         readTimeout: 600000
 rocketmq:
   name-server: 192.168.100.130:9876
+  producer:
+    #订单消息生产者
+    group: order-provider
+    send-message-timeout: 300000
+    compress-message-body-threshold: 4096
+    max-message-size: 4194304
+    retry-times-when-send-async-failed: 0
+    retry-next-server: true
+    retry-times-when-send-failed: 2
+
+#支付配置
+payconfig:
+  #支付安全校验
+  aes:
+    #AES加密秘钥
+    skey: ab2cc473d3334c39
+    #验签盐
+    salt: XPYQZb1kMES8HNaJWW8+TDu/4JdBK4owsU9eXCXZDOI=
+
 
 # ====================MybatisPlus====================
 mybatis-plus:

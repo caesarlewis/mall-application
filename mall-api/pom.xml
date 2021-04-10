@@ -21,6 +21,7 @@
         <module>user-api</module>
         <module>order-api</module>
         <module>pay-api</module>
+        <module>seckill-api</module>
     </modules>
 
     <dependencies>

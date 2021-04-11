@@ -24,6 +24,7 @@
         <module>order-service</module>
         <module>pay-service</module>
         <module>seckill-service</module>
+        <module>dw-service</module>
     </modules>
 
     <dependencies>

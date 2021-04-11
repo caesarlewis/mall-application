@@ -22,6 +22,7 @@
         <module>order-api</module>
         <module>pay-api</module>
         <module>seckill-api</module>
+        <module>dw-api</module>
     </modules>
 
     <dependencies>

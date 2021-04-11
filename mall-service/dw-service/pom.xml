@@ -9,37 +9,33 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>seckill-service</artifactId>
+    <artifactId>dw-service</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.jasonless.mall</groupId>
-            <artifactId>seckill-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.jasonless.mall</groupId>
-            <artifactId>seckill-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <!-- ElasticJobAutoConfiguration自动配置类作用-->
-        <dependency>
-            <groupId>com.github.kuhn-he</groupId>
-            <artifactId>elastic-job-lite-spring-boot-starter</artifactId>
-            <version>2.1.5</version>
-        </dependency>
-
+        <!--API-->
         <dependency>
             <groupId>com.jasonless.mall</groupId>
             <artifactId>dw-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!--操作Apache Druid-->
+        <dependency>
+            <groupId>org.apache.calcite.avatica</groupId>
+            <artifactId>avatica</artifactId>
+            <version>1.17.0</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.calcite.avatica</groupId>
+            <artifactId>avatica-core</artifactId>
+            <version>1.17.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.4</version>
+        </dependency>
     </dependencies>
-
 
 </project>

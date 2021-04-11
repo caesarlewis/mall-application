@@ -42,4 +42,7 @@ public class SeckillGoods {
     private Date createTime;
     @Column(name = "activity_id")
     private String activityId;
+
+    //商品锁定状态   0 : 未锁定  1： 已锁定
+    private Integer islock;
 }

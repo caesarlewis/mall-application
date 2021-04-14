@@ -1,0 +1,49 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: mall-gateway
+  redis:
+    host: 192.168.100.130
+    port: 6379
+  cloud:
+    gateway:
+      routes:
+        #秒杀
+        - id: seckill_route
+          uri: lb://mall-seckill
+          predicates:
+            - Path=/mall/**
+          filters:
+            - StripPrefix=1
+        #购物车
+        - id: cart_route
+          uri: lb://mall-cart
+          predicates:
+            - Path=/mall/cart/**
+          filters:
+            - StripPrefix=1
+        #用户服务
+        - id: user_route
+          uri: lb://mall-user
+          predicates:
+            - Path=/mall/address/**,/mall/user/info/**
+          filters:
+            - StripPrefix=1
+
+
+#producer
+rocketmq:
+  name-server: 192.168.100.130:9876
+  producer:
+    group: hotorder-group
+    send-message-timeout: 300000
+    compress-message-body-threshold: 4096
+    max-message-size: 4194304
+    retry-times-when-send-async-failed: 0
+    retry-next-server: true
+    retry-times-when-send-failed: 2
+
+logging:
+  pattern:
+    console: "%msg%n"

@@ -23,6 +23,7 @@
         <module>pay-api</module>
         <module>seckill-api</module>
         <module>dw-api</module>
+        <module>permission-api</module>
     </modules>
 
     <dependencies>

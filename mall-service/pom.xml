@@ -25,6 +25,7 @@
         <module>pay-service</module>
         <module>seckill-service</module>
         <module>dw-service</module>
+        <module>permission-service</module>
     </modules>
 
     <dependencies>

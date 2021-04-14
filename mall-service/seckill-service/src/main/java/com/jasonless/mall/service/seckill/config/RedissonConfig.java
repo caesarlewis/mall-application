@@ -1,8 +1,9 @@
-package com.jasonless.mall.service.seckill.lock;
+package com.jasonless.mall.service.seckill.config;
 
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -17,6 +18,7 @@ public class RedissonConfig {
      * 创建RedissonClient客户端
      * @return
      */
+    @Bean
     public RedissonClient redisson(){
         Config config = new Config();
         //单机模式

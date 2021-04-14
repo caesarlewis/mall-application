@@ -9,6 +9,7 @@
 		<module>mall-util</module>
 		<module>mall-web</module>
 		<module>mall-service</module>
+		<module>mall-gateway</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

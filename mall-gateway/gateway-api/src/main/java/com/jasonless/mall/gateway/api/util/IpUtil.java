@@ -1,4 +1,4 @@
-package com.gupaoedu.vip.mall.api.filter;
+package com.jasonless.mall.gateway.api.util;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;

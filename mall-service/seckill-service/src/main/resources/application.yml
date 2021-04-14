@@ -26,6 +26,10 @@ hot:
   #每小时查询超过max次
   max: 1
 
+#mq
+rocketmq:
+  name-server: 192.168.100.130:9876
+
 # ====================MybatisPlus====================
 mybatis-plus:
   mapper-locations: mapper/*.xml
